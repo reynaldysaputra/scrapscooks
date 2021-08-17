@@ -4,10 +4,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      theme: {
-        fontFamily: {
-          'poppins': ['Poppins']
-        }
+      fontFamily: {
+        'poppins': ['Poppins', 'monospace']
+      },
+      boxShadow: {
+        'full': '0 0 40px rgb(37 99 235 / 25%)'
       }
     },
   },
