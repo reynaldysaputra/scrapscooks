@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button-navbar{
+  @apply px-4 py-2 rounded-md text-blue-600 shadow-md xl:shadow-none xl:text-white font-poppins bg-white xl:bg-blue-600 text-sm
+}
