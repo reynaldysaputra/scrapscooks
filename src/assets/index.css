@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  #tables {
+    @apply w-max lg:w-full
+  }  
+}
+
+.react-bootstrap-table {
+  overflow-x: auto
+}
 
 .button-navbar{
   @apply px-4 py-2 rounded-md text-blue-600 shadow-md xl:shadow-none xl:text-white font-poppins bg-white xl:bg-blue-600 text-sm

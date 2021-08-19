@@ -32,7 +32,7 @@ function SignInPage(){
               <hr className='flex-1 text-gray-400' />
             </div>
 
-            <div className='w-full p-3 flex justify-center items-center space-x-4 shadow-md'>
+            <div className='w-full p-3 flex justify-center items-center space-x-4 shadow-md cursor-pointer'>
               <GoogleSvg/>
               <button>Sign with google</button>
             </div>
