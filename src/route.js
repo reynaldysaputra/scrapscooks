@@ -1,20 +1,24 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import ForgetPasswordPage from './screens/forget-password';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from './screens/home';
 import SignInPage from './screens/sign-in';
 import SignUpPage from './screens/sign-up';
 
 function Routes(){
   return(
-    <>
+    <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/sign-in' component={SignInPage} />
-        <Route path='/sign-up' component={SignUpPage} />
-        <Route path='/forget-password' component={ForgetPasswordPage} />
+        <Route path='/sign-in'>
+          <SignInPage/>
+        </Route>
+        <Route path='/sign-up'>
+          <SignUpPage/>
+        </Route>
+        <Route path='/'>
+          <Home/>
+        </Route>
       </Switch>
-    </>
+    </BrowserRouter>
   )
 }
 

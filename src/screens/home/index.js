@@ -1,5 +1,10 @@
 import React from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import Table from '../../components/table';
+import CreateUserPage from '../create-user';
+import DetailUserPage from '../detail-user';
+import EditUserPage from '../edit-user';
+import TableUserPage from '../table-user';
 
 const products = [
   {
@@ -66,16 +71,18 @@ const products = [
     id: 13,
     name: 'bung',
     price: '2500'
-  },
+  }
 ]
 
 function Home(){
+  let { path, url } = useRouteMatch();
+
   return(
     <>
       <nav className='w-full py-4 px-5 bg-blue-600 flex justify-end'>
         <p className='text-white cursor-pointer mb-0'>Logout</p>
       </nav>
-      <div className='w-full bg-gray-300'>
+      <div className='w-full bg-gray-300 antialiased'>
         <div className='w-full px-4 py-5 lg:p-0 lg:py-10 lg:w-[80%] h-full mx-auto'>
           <h2 className='text-3xl lg:text-4xl font-semibold'>Scraap Books</h2>
           <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laudantium quasi vel molestias. Voluptate alias harum illum adipisci vitae excepturi.</p>
@@ -84,9 +91,20 @@ function Home(){
         </div>
       </div>
       
-      <div className='mt-8 w-full px-4 lg:w-[80%] mx-auto'>
-        <Table products={products} />        
-      </div>
+      <Switch>
+        <Route path='/' exact>
+          <TableUserPage products={products} />
+        </Route>
+        <Route path={`${path}create-user`}>
+          <CreateUserPage/>
+        </Route>
+        <Route path={`${path}edit/:id`}>
+          <EditUserPage/>
+        </Route>
+        <Route path={`${path}detail/:id`}>
+          <DetailUserPage/>
+        </Route>
+      </Switch>
     </>
   )
 }
