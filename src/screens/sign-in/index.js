@@ -3,7 +3,7 @@ import DocumentTitle from 'react-document-title';
 import ContainerAuth from '../../components/container-auth';
 import { ReactComponent as SignInSvg } from '../../assets/sign-in.svg';
 import { ReactComponent as GoogleSvg } from '../../assets/google.svg';
-import InputAuth from '../input-auth';
+import InputAuth from '../../components/input-auth';
 import ButtonAuth from '../button-auth';
 
 function SignInPage(){

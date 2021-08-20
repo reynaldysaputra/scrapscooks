@@ -3,9 +3,27 @@ import DocumentTitle from 'react-document-title';
 import ContainerAuth from '../../components/container-auth';
 import { ReactComponent as SignUpSvg } from '../../assets/sign-up.svg';
 import InputAuth from '../input-auth';
-import ButtonAuth from '../button-auth';
+import ButtonAuth from '../../components/button-auth';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { register } from '../../config/redux/register/registerActions';
 
 function SignUpPage(){
+  const [state, setState] = useState({email: '', password: '', confirmPassword: ''});
+  const dispatch = useDispatch();
+
+  const handleInput = (e) => {
+    setState(state => ({
+      ...state,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    dispatch(register(state));
+  }
+
   return(
     <DocumentTitle title='Sign In'>
       <ContainerAuth>
@@ -19,10 +37,10 @@ function SignUpPage(){
           <div className='w-full lg:w-[90%] h-full xl:h-[80%] p-5 xl:px-5 xl:py-0'>
             <h2 className='text-xl font-semibold tracking-wide'>Sign Up</h2>
             <p className='mt-3 font-light text-base'>Enter your data here.</p>
-            <form>
-              <InputAuth label='Email' id='email' type='text' placeholder='Exampl@email.com' />
-              <InputAuth label='Password' id='password' type='password' placeholder='Enter password' noForgotPassword />
-              <InputAuth label='Confirm Password' id='password' type='password' placeholder='Enter password' noForgotPassword />
+            <form onSubmit={handleRegister}>
+              <InputAuth label='Email' id='email' type='text' placeholder='Exampl@email.com' onChange={handleInput} />
+              <InputAuth label='Password' id='password' type='password' placeholder='Enter password' noForgotPassword onChange={handleInput} />
+              <InputAuth label='Confirm Password' id='confirmPassword' type='password' placeholder='Enter password' noForgotPassword onChange={handleInput} />
               <ButtonAuth name='Start Now!' />
             </form>
           </div>

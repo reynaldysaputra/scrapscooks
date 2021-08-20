@@ -17,6 +17,8 @@ function InputAuth(props){
           className='w-full outline-none border-none placeholder-gray-400 text-xs pr-3' 
           placeholder={props.placeholder}
           id={props.id}
+          name={props.id}
+          onChange={props.onChange}
         />
 
         {props.type == 'password' && (
