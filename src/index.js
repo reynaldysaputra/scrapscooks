@@ -5,11 +5,14 @@ import Routes from './route';
 import firebase from './config/firebase';
 import { Provider } from 'react-redux';
 import { MyStore } from './config/redux/store';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={MyStore}>
-      <Routes/>
+      <BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

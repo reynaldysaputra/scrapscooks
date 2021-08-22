@@ -1,6 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-import Table from '../../components/table';
+import { userLogout } from '../../config/redux/login/loginActions';
 import CreateUserPage from '../create-user';
 import DetailUserPage from '../detail-user';
 import EditUserPage from '../edit-user';
@@ -76,11 +77,12 @@ const products = [
 
 function Home(){
   let { path, url } = useRouteMatch();
+  const dispatch = useDispatch();
 
   return(
     <>
       <nav className='w-full py-4 px-5 bg-blue-600 flex justify-end'>
-        <p className='text-white cursor-pointer mb-0'>Logout</p>
+        <p className='text-white cursor-pointer mb-0' onClick={() => dispatch(userLogout())}>Logout</p>
       </nav>
       <div className='w-full bg-gray-300 antialiased'>
         <div className='w-full px-4 py-5 lg:p-0 lg:py-10 lg:w-[80%] h-full mx-auto'>

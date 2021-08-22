@@ -1,12 +1,13 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { PrivateRoute } from './components/privateRoute';
 import Home from './screens/home';
 import SignInPage from './screens/sign-in';
 import SignUpPage from './screens/sign-up';
 
 function Routes(){
   return(
-    <BrowserRouter>
+    <>
       <Switch>
         <Route path='/sign-in'>
           <SignInPage/>
@@ -14,11 +15,9 @@ function Routes(){
         <Route path='/sign-up'>
           <SignUpPage/>
         </Route>
-        <Route path='/'>
-          <Home/>
-        </Route>
+        <PrivateRoute path='/' component={Home} />
       </Switch>
-    </BrowserRouter>
+    </>
   )
 }
 
