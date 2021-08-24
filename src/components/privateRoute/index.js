@@ -2,36 +2,30 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Redirect, Route} from 'react-router-dom';
-import { userLoginIfAvailable, userLoginLoadingWithEmail, userLoginLoadingWithGoogle } from '../../config/redux/login/loginActions';
+import { userLoginIfAvailable} from '../../config/redux/login/loginActions';
 import firebase from '../../config/firebase';
+import { useState } from 'react';
 
 export function PrivateRoute({component: Component, ...props}){
-  const {isAuth} = useSelector(state => state.login);
-  const {loadingWithEmail, loadingWithGoogle} = useSelector(state => state.login);
+  const {user} = useSelector(state => state.login);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(userLoginLoadingWithGoogle(true));
-    dispatch(userLoginLoadingWithEmail(true));
-  }, [])
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((res) => {
       dispatch(userLoginIfAvailable(res));
-      dispatch(userLoginLoadingWithEmail(false));
-      dispatch(userLoginLoadingWithGoogle(false));
+      setLoading(false);
     })
   }, [])
 
-  if(loadingWithEmail || loadingWithGoogle) return <h2>Loading...</h2>;
-  else {
-    return <Route
-      {...props}
-      render= {(props) => {
-          return isAuth ? <Component {...props} /> : <Redirect to='/sign-in' />
-        }
+  if(loading) return <h2>Loading...</h2>;
+
+  return <Route
+    {...props}
+    render= {(props) => {
+        return user !== null ? <Component {...props} /> : <Redirect to='/sign-in' />
       }
-    />
-  }
+    }
+  />
 
 }

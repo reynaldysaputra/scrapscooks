@@ -12,7 +12,6 @@ function ButtonAuth(props){
       `
     }
   >
-    {console.log(loading)}
     {props.name}
     </button>
 }

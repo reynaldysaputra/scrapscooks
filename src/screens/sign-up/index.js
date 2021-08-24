@@ -2,7 +2,7 @@ import React from 'react';
 import DocumentTitle from 'react-document-title';
 import ContainerAuth from '../../components/container-auth';
 import { ReactComponent as SignUpSvg } from '../../assets/sign-up.svg';
-import InputAuth from '../input-auth';
+import InputAuth from '../../components/input-auth';
 import ButtonAuth from '../../components/button-auth';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';

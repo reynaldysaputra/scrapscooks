@@ -36,7 +36,6 @@ export const register = ({email, password, confirmPassword}) => {
     }else {
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {
-          dispatch(userRegisterLoading(false));
           Swal.fire({
             text: 'You have registered successfully!',
             icon: 'success',
@@ -45,7 +44,6 @@ export const register = ({email, password, confirmPassword}) => {
           dispatch(userRegister(res));
         })
         .catch(err => {
-          dispatch(userRegisterLoading(false));
           Swal.fire({
             text: err.message,
             icon: 'error',
@@ -55,5 +53,6 @@ export const register = ({email, password, confirmPassword}) => {
         })
     }
 
+    dispatch(userRegisterLoading(false));
   }
 }

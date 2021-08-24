@@ -3,9 +3,8 @@ import firebase from '../../firebase';
 
 export const userLoginIfAvailable = (props) => {
   return {
-    type: props.emailVerified ? USER_LOGIN_WITH_GOOGLE : USER_LOGIN_WITH_EMAIL,
+    type: props?.emailVerified ? USER_LOGIN_WITH_GOOGLE : USER_LOGIN_WITH_EMAIL,
     data: props,
-    auth: true
   }
 }
 
@@ -13,7 +12,6 @@ export const userLoginWithEmail = (props) => {
   return {
     type: USER_LOGIN_WITH_EMAIL,
     data: props,
-    auth: true
   }
 }
 
@@ -21,7 +19,6 @@ export const userLoginWithGoogle= (props) => {
   return {
     type: USER_LOGIN_WITH_GOOGLE,
     data: props,
-    auth: true
   }
 }
 
@@ -46,9 +43,36 @@ export const userLoginError = ({error}) => {
   }
 }
 
-export const userLogout = () => {
+export const userLogouts = () => {
   return {
     type: USER_LOGOUT
+  }
+}
+
+export const userLogout = () => {
+  return (dispatch) => {
+    firebase.auth().signOut()
+    .then(res=> {
+      dispatch(userLogouts());
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+}
+
+export const forgotPassword = (email) => {
+  return (dispatch) => {
+    return new Promise((resolve, reject) => {
+      dispatch(userLoginLoadingWithEmail(true));
+      firebase.auth().sendPasswordResetEmail(email)
+        .then(res => {
+          dispatch(userLoginLoadingWithEmail(false));
+          resolve(true);
+        }).catch(err => {
+          dispatch(userLoginLoadingWithEmail(false));
+          resolve(err);
+        })
+    })
   }
 }
 

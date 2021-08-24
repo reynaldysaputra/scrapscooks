@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { userLogout } from '../../config/redux/login/loginActions';
 import CreateUserPage from '../create-user';
@@ -77,6 +77,7 @@ const products = [
 
 function Home(){
   let { path, url } = useRouteMatch();
+  const {user} = useSelector(state => state.login);
   const dispatch = useDispatch();
 
   return(
@@ -89,7 +90,7 @@ function Home(){
           <h2 className='text-3xl lg:text-4xl font-semibold'>Scraap Books</h2>
           <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero laudantium quasi vel molestias. Voluptate alias harum illum adipisci vitae excepturi.</p>
           <hr className='mt-4 text-gray-400' />
-          <p className='mt-4'>Welcome <span>renalfrontend@gmail.com!</span></p>
+          <p className='mt-4'>Welcome <span>{user.email}</span></p>
         </div>
       </div>
       

@@ -9,7 +9,7 @@ function InputAuth(props){
     <div className='w-full font-poppins mt-6'>
       <div className='flex justify-between'>
         <label htmlFor={props.id} className='font-medium text-sm'>{props.label}</label>
-        {props.type == 'password' && !props.noForgotPassword ? <Link to='forgot-password' className='text-sm text-blue-600'>Forgot Password</Link> : null}
+        {props.type == 'password' && !props.noForgotPassword ? <Link to='/forgot-password' className='text-sm text-blue-600'>Forgot Password</Link> : null}
       </div>
       <div className='w-full shadow-md p-5 mt-2 flex items-center justify-between'>
         <input 
