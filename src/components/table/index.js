@@ -5,6 +5,7 @@ import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const { SearchBar } = Search;
 
@@ -18,12 +19,12 @@ const columns = [
     },
     sort : true
   }, {
-    dataField: 'name',
-    text: 'Product Name',
+    dataField: 'userName',
+    text: 'User Name',
     sort : true
   }, {
-    dataField: 'price',
-    text: 'Product Price',
+    dataField: 'gender',
+    text: 'Gender',
     sort : true
   },
   {
@@ -34,7 +35,7 @@ const columns = [
         <div className='flex space-x-3'>
           <ButtonActions detail name='Detail' link={`/detail/${row.id}`} />
           <ButtonActions edit name='Edit' link={`/edit/${row.id}`} />
-          <ButtonActions remove name='Remove'/>
+          <ButtonActions remove name='Remove' id={row.id} />
         </div>
       )
     }
@@ -46,14 +47,15 @@ const defaultSorted = [{
   order: 'desc'
 }];
 
-function Table({products}){
+function Table(){
   const history = useHistory();
+  const {userList} = useSelector(state => state.users);
 
   return(
     <ToolkitProvider
       bootstrap4
       keyField='id' 
-      data={ products } 
+      data={userList === undefined ? [{}] : userList} 
       columns={ columns } 
       defaultSorted={defaultSorted}
       search

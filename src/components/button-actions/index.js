@@ -1,7 +1,33 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { deleteUser } from '../../config/redux/user/userActions';
 
-function ButtonActions({detail, edit, remove, name, link}){
+function ButtonActions({detail, edit, remove, name, link, id}){
+  const dispatch = useDispatch();
+
+  const handleRemove = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You will delete this data!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteUser(`http://localhost:3001/user/${id}`));
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
+
   return(
     <Link to={link != undefined ? link : '/'}>
       <button 
@@ -10,6 +36,7 @@ function ButtonActions({detail, edit, remove, name, link}){
           edit && 'px-2 h-auto bg-yellow-500 text-white py-2 rounded-md flex items-center' ||
           remove && 'px-2 h-auto bg-red-600 text-white py-2 rounded-md flex items-center'
         }
+        onClick={() => remove && handleRemove()}
       >
         {
           detail && (
