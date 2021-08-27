@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+## `SCRAPSCOOKS : What project is this?`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of the simple-notes-redux-firebase project is to create small notes on the users who will log in to this application.
 
-## Available Scripts
+The goal of the Scrapscooks project is to get users to keep a list of the users they have for their needs.
 
-In the project directory, you can run:
+In this project you will see many features, such as login using email, login using google, changing password, registering, registering, and others.
 
-### `yarn start`
+In this project you will see the main page i.e. Login/Register page, you have to Register first before starting to create your own user list.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is created using the key in the .env file, If you want to clone it follow the steps below.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project uses:
+- REACT JS
+- FIREBASE
+- FIREBASE FIRESTORE
+- FIREBASE Authentication
+- ROUTER REACTION
+- REDUX
+- TAILWIND CSS
+- BOOSTRAP
+- TABLE BOOSTRAP
+- AXIOS
+- FAKE JSON SERVER
 
-### `yarn test`
+## `How to Install SCRAPSCOOKS`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install Node.js 0.10 or later.
+2. Run `yarn install`.
+3. Create your firebase account and fetch firebase configuration there.
+4. If you have created a firebase account and fetched the configuration, you can follow this command
+``` bash
+REACT_APP_FIREBASE_API_KEY= {YOUR FIREBASE KEY}
+REACT_APP_FIREBASE_AUTH_DOMAIN= { YOUR AUTH FIREBASE DOMAIN}
+REACT_APP_FIREBASE_PROJECT_ID= {YOUR FIREBASE PROJECT ID}
+REACT_APP_FIREBASE_STORAGE_BUCKET= { YOUR FIREBASE STORAGE BUCKET} REACT_APP_FIREBASE_MESSAGING_SENDER_ID= { YOUR FIREBASE MESSENGER ID}
+REACT_APP_FIREBASE_APP_ID= {YOUR FIREBASE APP ID}
+REACT_APP_FIREBASE_MEASUREMENT_ID= {YOUR FIREBASE MEASUREMENTS}
+```
+5. You also need to enable the Authentication feature in Firebase
+6. Install json server "yarn add json-server"
+7. Run this server in a different terminal/cmd
+8. Run json server using localhost:3001 "json-server --watch db.json --port 3001"
+9. Run project `yarn start`
+10. Done
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## `SCRAPSCOOKS App View`
+![Screen Shot 2021-08-26 at 00 59 33](https://user-images.githubusercontent.com/43536639/131166211-55de711f-b124-4900-8ba5-58fc611c1ea7.png)
+![Screen Shot 2021-08-26 at 00 59 40](https://user-images.githubusercontent.com/43536639/131166225-028fc28f-7ccd-4ad0-a168-30a1a8a92f2e.png)
+![Screen Shot 2021-08-26 at 00 59 48](https://user-images.githubusercontent.com/43536639/131166230-fed13beb-c182-4c45-ba46-d46906fd1629.png)
+![Screen Shot 2021-08-26 at 01 04 14](https://user-images.githubusercontent.com/43536639/131166234-98feddea-ccb0-41e0-8193-611e734a2525.png)
+![Screen Shot 2021-08-26 at 01 04 37](https://user-images.githubusercontent.com/43536639/131166236-54790441-1940-4792-9d1f-540db81b9037.png)
+![Screen Shot 2021-08-26 at 01 05 07](https://user-images.githubusercontent.com/43536639/131166240-28214817-6391-4ecc-bc8c-9811f0a6246e.png)
+![Screen Shot 2021-08-26 at 01 05 23](https://user-images.githubusercontent.com/43536639/131166244-22f4af0b-071d-4397-8531-df99dfa3fb1f.png)
+![Screen Shot 2021-08-26 at 01 05 30](https://user-images.githubusercontent.com/43536639/131166247-724a830f-1daa-4959-a834-43b7de10e6bb.png)
