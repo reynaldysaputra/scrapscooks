@@ -1,7 +1,5 @@
 ## `SCRAPSCOOKS : What project is this?`
 
-The goal of the simple-notes-redux-firebase project is to create small notes on the users who will log in to this application.
-
 The goal of the Scrapscooks project is to get users to keep a list of the users they have for their needs.
 
 In this project you will see many features, such as login using email, login using google, changing password, registering, registering, and others.
