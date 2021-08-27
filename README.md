@@ -38,9 +38,9 @@ REACT_APP_FIREBASE_APP_ID= {YOUR FIREBASE APP ID}
 REACT_APP_FIREBASE_MEASUREMENT_ID= {YOUR FIREBASE MEASUREMENTS}
 ```
 5. You also need to enable the Authentication feature in Firebase
-6. Install json server "yarn add json-server"
+6. Install json server `yarn add json-server`
 7. Run this server in a different terminal/cmd
-8. Run json server using localhost:3001 "json-server --watch db.json --port 3001"
+8. Run json server using localhost:3001 `json-server --watch db.json --port 3001`
 9. Run project `yarn start`
 10. Done
 
