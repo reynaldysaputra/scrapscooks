@@ -11,7 +11,6 @@ This project is created using the key in the .env file, If you want to clone it 
 This project uses:
 - REACT JS
 - FIREBASE
-- FIREBASE FIRESTORE
 - FIREBASE Authentication
 - REACT ROUTER
 - REDUX
