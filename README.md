@@ -25,7 +25,7 @@ This project uses:
 1. Install Node.js 0.10 or later.
 2. Run `yarn install`.
 3. Create your firebase account and fetch firebase configuration there.
-4. If you have created a firebase account and fetched the configuration, you can follow this command
+4. If you have already created a firebase account and fetched the configuration, you can follow the below command by creating a file named .env in the project root and entering the firebase configuration in the .env file
 ``` bash
 REACT_APP_FIREBASE_API_KEY= {YOUR FIREBASE KEY}
 REACT_APP_FIREBASE_AUTH_DOMAIN= { YOUR AUTH FIREBASE DOMAIN}
